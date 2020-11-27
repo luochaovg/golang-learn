@@ -6,6 +6,13 @@ import (
 	calc "liwenzhou/jisuan"
 )
 
+// 包名通常和目录名一致，不能包含"-"
+// 一个文件夹就是一个包
+// 文件夹里面方的都是.go 文件
+
+// 单行导入/ 多行导入 / 给包起别名 / 匿名导入（sql包导入时用到这个）
+// 包中标识符可见行， 首字母大写
+
 // 包的路径从 GOPATH/src 后面的路径开始写起，路径分隔符用 /
 // 想被别的包调用的标示符都要首字母大写
 // 单行倒入和多行倒入
@@ -15,7 +22,7 @@ import (
 // 	中都定义了init()函数，则他们的执行顺序 "相反"
 
 //问题
-//我在导入gopath目录下的包时报错“package xxx is not in GOROOT“，编译器没有去gopath下找包，
+// 我在导入gopath目录下的包时报错“package xxx is not in GOROOT“，编译器没有去gopath下找包，
 // 查了一下原因是GO111MODULE没有关， gomod 和 gopath 两个包管理方案，并且相互不兼容，
 // 在 gopath 查找包，按照 goroot 和多 gopath 目录下 src/xxx 依次查找。
 // 在 gomod 下查找包，解析 go.mod 文件查找包，mod 包名就是包的前缀，里面的目录就后续路径了。

@@ -1,6 +1,7 @@
 package _struct
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 )
@@ -32,8 +33,13 @@ func main() {
 
 		// 2.等待用户选择下一步
 		var choice int
-		fmt.Scanln(&choice)
+		fmt.Scanln(&choice) // 只能读到空白符
 		fmt.Printf("你选择了%d这个选项\n", choice)
+
+		//var s string
+		reader := bufio.NewReader(os.Stdin) // NewReader 的参数就是接口类型
+		//s, _ := reader.ReadString('\n')
+		//fmt.Println(s)
 
 		// 3.执行对应的函数
 		switch choice {
