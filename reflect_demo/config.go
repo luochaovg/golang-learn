@@ -17,5 +17,6 @@ func main() {
 	var mc MysqlConfig
 	loadIni(&mc)
 
+	//
 	fmt.Println(mc, mc.Address)
 }
