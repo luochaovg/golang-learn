@@ -48,6 +48,10 @@ func reflectSetValue2(x interface{}) {
 	}
 }
 
+// 反射
+// 接口类型的变量底层是分为两部分： 动态类型和动态值
+// 反射的应用 json等数据解析/ORM等工具
+
 func main() {
 	var a float32 = 3.14
 	//reflectType(a) // type:float32

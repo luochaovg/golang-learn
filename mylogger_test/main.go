@@ -10,8 +10,8 @@ var log mylogger.Logger // 声明一个全局的接口变量
 // 测试我们自己的写的日志库
 func main() {
 
-	log = mylogger.NewConsoleLog("debug") // 终端日志实列
-	//log = mylogger.NewFileLogger("Info", "./", "law.log", 10*1024*1024) // 文件日志实列
+	//log = mylogger.NewConsoleLog("debug") // 终端日志实列
+	log = mylogger.NewFileLogger("Info", "./", "law.log", 10*1024*1024) // 文件日志实列
 
 	for {
 		id := 1000

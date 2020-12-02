@@ -23,7 +23,7 @@ func time01() {
 	fmt.Println(d.Hours())
 
 	//fmt.Println(222222)
-	//n := time.Duration(5 * time.Second)
+	//n := time.Duration(5 * time.Second) // 时间间隔
 	//time.Sleep(time.Second * 5)
 	//fmt.Println(33333)
 	// 定时器
@@ -70,4 +70,5 @@ func main() {
 
 	td := timeObj.Sub(now)
 	fmt.Println(td)
+
 }
