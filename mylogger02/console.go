@@ -1,4 +1,4 @@
-package mylogger
+package mylogger02
 
 import (
 	"fmt"

@@ -7,7 +7,7 @@ import (
 
 // channel
 // goroutine 是go程序并发的执行体，channel 就是他们的链接
-// channel 是一种特定的类型
+// channel 是一种特定的类型，引用的类型 ， make 函数初始化之后才能使用
 
 var slice []string
 var ch chan int // 需要指定通道中元素的类型

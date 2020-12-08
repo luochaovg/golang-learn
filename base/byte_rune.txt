@@ -1,0 +1,65 @@
+Go 字节 (byte) & 文字符号 (rune)
+byte
+通过 byte 定义一个字节，字节必须使用单引号包起来，直接打印字节输出的是 ascii 码，需要通过格式化输出
+byte 是 uint8 的别称，使用 byte 主要是为了区分字节和无符号整型两种类型
+示例：
+
+func main() {
+	var a byte
+	fmt.Printf("%v, type: %T, char: %c", a, a, a)
+}
+输出：
+
+0, type: uint8, char:
+rune
+通过 rune 定义一个字符，字符必须使用单引号包起来
+rune 是 int32 的别称，使用 rune 主要是为了区分字符和整型两种类型
+示例：
+
+func main() {
+	var a rune
+	fmt.Printf("%v, type: %T, char: %c\n", a, a, a)
+}
+输出结果：
+
+0, type: int32, char:
+byte & rune
+byte 表示一个字节，可以表示英文字符等占用一个字节的字符，占用多于一个字节的字符就无法正确表示，例如占用 3 个字节的汉字
+rune 表示一个字符，用来表示任何一个字符
+
+示例：
+
+func main() {
+	a := "你好，hello"
+	b := []byte(a)
+	c := []rune(a)
+	fmt.Printf("b: %v\ntype: %T\n\nc: %v\ntype: %T", b, b, c, c)
+}
+输出结果：
+
+b: [228 189 160 229 165 189 239 188 140 104 101 108 108 111]
+type: []uint8
+
+c: [20320 22909 65292 104 101 108 108 111]
+type: []int32
+可以看出 byte 并不能正确解析超过 1 byte 的字符，需要使用 rune
+
+转换
+byte 和 rune 之间可以转换，byte 转向 rune 时不会出错
+但是 rune 转向 byte 时会出现问题：
+如果 rune 表示的字符只占用一个字符，不超过 uint8 时不会出错；超过时直接转换编译无法通过，可以通过引用转换，但是会舍去超出的位，出现错误结果
+示例：
+
+func main() {
+	char := '你'
+	v1 := rune(char)
+	v2 := byte(char)
+	s1 := strconv.FormatInt(int64(v1), 2)
+	s2 := strconv.FormatInt(int64(v2), 2)
+	fmt.Printf("v1: %c, type: %T, %v\n", v1, v1, s1)
+	fmt.Printf("v2: %c, type: %T, %v\n", v2, v2, s2)
+}
+输出结果：
+
+v1: 你, type: int32, 100111101100000
+v2: `, type: uint8, 1100000
