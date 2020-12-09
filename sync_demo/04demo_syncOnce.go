@@ -34,17 +34,22 @@ func f1(ch1 chan<- int) {
 func f2(ch1 <-chan int, ch2 chan<- int) {
 	defer wg.Done()
 	for {
+		// 通道只有关闭了， OK才是false，
+		// 没有关闭的情况如果通道没有值，就是堵塞的状态
 		x, ok := <-ch1
 		if !ok {
 			break
 		}
+		// 此处是不严谨的,
 		ch2 <- x * x
 	}
 
+	// once.Do 例子
+	// 闭包：一个函数包含外部一个函数作用域变量的引用
 	f := func() {
 		close(ch2)
 	}
-	once.Do(f)
+	once.Do(f) // 接受一个没有参数也没有返回值的函数， 如有需要可以使用闭包
 }
 
 func main() {

@@ -6,6 +6,9 @@ import (
 
 // sync.Once  并发安全
 
+// 使用场景
+// 某些函数值需要执行一次的时候，就可以使用sync.Once
+
 var icons map[string]int
 var loadIconsOnce sync.Once
 

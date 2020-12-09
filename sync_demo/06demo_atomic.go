@@ -7,6 +7,9 @@ import (
 )
 
 // 原子操作
+// GO语言内置了一些针对内置的基本数据类型的一些并发安全的操作
+// atomic.AddInt64
+
 var x int64
 var wg sync.WaitGroup
 var lock sync.Mutex

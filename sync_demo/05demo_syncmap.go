@@ -6,7 +6,7 @@ import (
 	"sync"
 )
 
-// GO 内置的map 不是并发安全的
+// 并发操作一个GO内置的map 不是并发安全的
 
 var m = make(map[string]int)
 
@@ -32,10 +32,10 @@ func set(key string, value int) {
 //	wg.Wait()
 //}
 
+// sync.Map 开箱即用的并发安全的map， 不需要make初始化的
 var m2 = sync.Map{}
 
 func main() {
-
 	wg := sync.WaitGroup{}
 
 	for i := 0; i < 21; i++ {
