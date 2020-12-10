@@ -1,0 +1,22 @@
+package split_string
+
+import (
+	"reflect"
+	"testing"
+)
+
+func TestSplit(t *testing.T) {
+	got := Split("a:b:c", ":")
+	want := []string{"a", "b", "c"} // 切片是引用类型不能直接比较
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("want:%v, but got %v", want, got)
+	}
+}
+
+func TestSplit2(t *testing.T) {
+	got := Split("a:b:c", ":b")
+	want := []string{"a", "b", "c"} // 切片是引用类型不能直接比较
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("want:%v, but got %v", want, got)
+	}
+}
