@@ -51,7 +51,7 @@ func main() {
 	// 查一条
 	sqlStr := "select id,username,password from admin_users where id=?;"
 	var u user
-	db.Get(&u, sqlStr, 1)
+	db.Get(&u, sqlStr, 1) // TODO 注意
 	fmt.Println(u.ID)
 
 	// 查多条

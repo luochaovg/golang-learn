@@ -1,0 +1,20 @@
+1, 定义数据表 实体类 Model
+     分类结构体
+     文章结构体
+
+2，数据层 dao/db
+    a.sql的CURD, 以及测试类
+    b.使用mysql的时间字段遇到如下两个问题
+        b1.使用go-sql-driver来连接mysql数据库，获取的时区默认是UTC +0的，与本地的东八区是有区别，在业务处理中会出现问题
+        b2.获取mysql中的日期，是string类型，需要在代码中用time.Parse进行转化`
+        b3.时间类型定义：`create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '发布时间', // 2020-12-16 11:11:14
+
+
+3,业务逻辑层 server
+  从dao层拿取数据
+    1，获取分类列表
+    2，获取所有文章对对应的信息
+
+4,controller
+
+5,项目入口

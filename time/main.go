@@ -50,6 +50,7 @@ func time01() {
 
 func main() {
 	now := time.Now() // 本地时间
+	fmt.Println(222222)
 	fmt.Println(now)
 
 	// 明天的这个时间

@@ -13,7 +13,8 @@ type person struct{}
 
 // 定义一个能叫的类型
 type speaker interface {
-	speak() // 只要实现了speak 方法的变量都是speaker类型
+	//TODO 只要实现了speak 方法的变量都是speaker类型
+	speak()
 }
 
 /**

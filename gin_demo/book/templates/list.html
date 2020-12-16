@@ -1,0 +1,34 @@
+{{ define "list.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>book list</title>
+</head>
+<body>
+    <div><a href="/book/new" class="href">添加新书</a>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>title</th>
+                <th>Price</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+
+            <tbody>
+                {{ range .data}}
+                    <tr>
+                        <td>{{.ID}}</td>
+                        <td>{{.Title}}</td>
+                        <td>{{.Price}}</td>
+                        <td><a href="/book/delele?id={{.ID}}" class="href">删除</a></td>
+                    </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+{{end}}
