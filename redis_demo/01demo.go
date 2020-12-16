@@ -13,8 +13,8 @@ var rdb *redis.Client
 func initClient() (err error) {
 	rdb = redis.NewClient(&redis.Options{
 		Addr:     "192.168.158.88:6379",
-		Password: "lc910112", // no password set
-		DB:       0,          // use default DB
+		Password: "123456", // no password set
+		DB:       0,        // use default DB
 	})
 
 	_, err = rdb.Ping().Result()
@@ -35,6 +35,7 @@ func main() {
 	}
 
 	redisExample2()
+
 }
 
 func redisExample2() {

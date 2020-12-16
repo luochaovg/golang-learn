@@ -19,7 +19,7 @@ type user struct {
 }
 
 func initDB() (err error) {
-	dsn := "root:lc910112@tcp(192.168.158.88:3306)/lez-analysis"
+	dsn := "root:123456@tcp(192.168.158.88:3306)/lez"
 	// 不会校验用户名密码正确
 	db, err = sqlx.Connect("mysql", dsn) // 这里的db 就是全局db
 

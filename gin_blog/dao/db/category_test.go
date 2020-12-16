@@ -3,7 +3,7 @@ package db
 import "testing"
 
 func init() {
-	dns := "root:lc910112@tcp(192.168.158.88:3306)/blogger?parseTime=true"
+	dns := "root:123456@tcp(192.168.158.88:3306)/blogger?parseTime=true"
 	err := Init(dns)
 	if err != nil {
 		panic(err)

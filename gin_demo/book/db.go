@@ -9,7 +9,7 @@ import (
 var db *sqlx.DB
 
 func initDB() (err error) {
-	addr := "root:lc910112@tcp(192.168.158.88:3306)/gin_demo"
+	addr := "root:123456@tcp(192.168.158.88:3306)/gin_demo"
 	db, err = sqlx.Connect("mysql", addr)
 	if err != nil {
 		return err
