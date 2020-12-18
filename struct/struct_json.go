@@ -1,4 +1,4 @@
-package _struct
+package main
 
 import (
 	"encoding/json"
@@ -13,6 +13,33 @@ type person struct {
 	Age  int    `json:"age" db:"name" ini:"name"`
 }
 
+// 首先你需要知道的是，如果你能够为某个类型实现了MarshalJSON()([]byte, error)和UnmarshalJSON(b []byte) error方法，
+// 那么这个类型在序列化（MarshalJSON）/反序列化（UnmarshalJSON）时就会使用你定制的相应方法。
+
+// 序列化
+//func (p *person) MarshalJSON(b []byte) error {
+//
+//	fmt.Printf("%#v\n", string(b))
+//
+//	return nil
+//}
+
+// 反序列化
+//func (p *person) UnmarshalJSON(data []byte) (err error) {
+//	required := struct {
+//		Name string `json:"name"`
+//		Age  string `json:"age"`
+//	}{}
+//	fmt.Printf("%#v\n", required)
+//	err = json.Unmarshal(data, &required)
+//
+//	if err != nil {
+//		return
+//	}
+//
+//	return nil
+//}
+
 func main() {
 	p1 := person{
 		Name: "law",
@@ -24,6 +51,7 @@ func main() {
 		fmt.Printf("err:%v \n", err)
 		return
 	}
+	fmt.Printf("%#v , %s \n", b, string(b))
 
 	//fmt.Println(string(b))
 	fmt.Printf("%v \n", string(b))

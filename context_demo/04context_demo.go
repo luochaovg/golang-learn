@@ -12,7 +12,7 @@ func gen(ctx context.Context) <-chan int {
 		for {
 			select {
 			case <-ctx.Done():
-				return // return结束该goroutine，防止泄露
+				return // return结束该goroutine，防止内存泄露
 			case dst <- n:
 				n++
 			}

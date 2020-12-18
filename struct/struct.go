@@ -1,4 +1,4 @@
-package _struct
+package main
 
 import "fmt"
 
@@ -94,7 +94,7 @@ func main() {
 	fmt.Println(p4)
 
 	p5 := newPerson("law", 23)
-	fmt.Println(p5)
+	fmt.Println("aaaaaaaa", p5)
 
 	d1 := newDog("zhoulin")
 	d1.wang()
