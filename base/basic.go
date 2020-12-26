@@ -123,6 +123,29 @@ func main() {
 	}
 
 	fmt.Println(m1)
-	fmt.Printf("%T", m1)
+	fmt.Printf("%T\n", m1)
 
+	bba := 98
+
+	bbc := int64(200)
+	fmt.Printf("%#v, %T\n", bba, bba)
+	fmt.Printf("%#v, %T\n", bbc, bbc)
+
+	if bbc > bba {
+		fmt.Printf("True")
+	}
+
+	bs := "范德萨发生呢"
+	aa := []rune(bs)
+
+	ba := "abac你"
+	bb := []byte(ba)
+
+	fmt.Println(aa)
+	fmt.Println(bb)
+
+	b := string(aa)
+	c := string(bb)
+	fmt.Println(b, c)
+	// string() 转换一个字节切片或者rune切片为字符串
 }
