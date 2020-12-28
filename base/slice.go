@@ -1,4 +1,4 @@
-package base
+package main
 
 import "fmt"
 
@@ -87,5 +87,19 @@ func main() {
 	}
 
 	fmt.Println(aa)
+
+	urls := make(map[string]string, 3)
+	// 这里随便个例子
+	urls["baidu"] = "www.baidu.com"
+	urls["google"] = "www.google.com"
+	urls["csdn"] = "www.csdn.net"
+
+	names := make([]string, len(urls)) // 注意此时切片已经有值了 []string{ "", "", ""}
+	//var names []string
+	for key, _ := range urls {
+		names = append(names, key) // append 会自动给切片执行初始化操作
+	}
+
+	fmt.Println(names, len(names))
 
 }
