@@ -131,9 +131,9 @@ func main() {
 	fmt.Printf("%#v, %T\n", bba, bba)
 	fmt.Printf("%#v, %T\n", bbc, bbc)
 
-	if bbc > bba {
-		fmt.Printf("True")
-	}
+	//if bbc > bba {
+	//	fmt.Printf("True")
+	//}
 
 	bs := "范德萨发生呢"
 	aa := []rune(bs)
@@ -148,4 +148,8 @@ func main() {
 	c := string(bb)
 	fmt.Println(b, c)
 	// string() 转换一个字节切片或者rune切片为字符串
+
+	iccid := "342423423423423423423420123456"
+	str22 := "MiFi" + string([]rune(iccid)[len([]rune(iccid))-6:])
+	fmt.Println(str22)
 }
