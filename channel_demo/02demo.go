@@ -13,6 +13,8 @@ import (
 // 2.启动一个goroutine，从ch1中取值，计算其平方放到ch2中
 // 3.在main中，从ch2中取值打印
 
+// 注意： 往通道存值 -> 发送  ， 往通道取值 -> 接收
+
 var wg sync.WaitGroup
 var once sync.Once
 

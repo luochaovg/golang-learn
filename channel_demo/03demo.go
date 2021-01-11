@@ -16,6 +16,14 @@ func main() {
 	//	fmt.Println(x)
 	//}
 
+	//slice := make([]int, 0, 100)
+	//hash := make(map[int]bool, 10)
+	//ch := make(chan int, 5)
+
+	//slice是包含data、cap、len的私有结构体；
+	//hash是指向runtime.hmap的结构体指针；
+	//ch是指向runtime.hchan的结构体指针；
+
 	<-ch1
 	<-ch1
 	x, ok := <-ch1

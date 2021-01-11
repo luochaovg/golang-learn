@@ -31,6 +31,7 @@ var resultChan = make(chan *result, 100)
 var wg sync.WaitGroup
 
 func product(ch1 chan<- *job) {
+
 	defer wg.Done()
 
 	// 开启一个goroutine循环生成int64类型的随机数，发送到jobChan

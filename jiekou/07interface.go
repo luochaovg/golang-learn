@@ -9,7 +9,7 @@ type People interface {
 type Student3 struct {
 }
 
-func (s *Student3) Speak(think string) (talk string) {
+func (s Student3) Speak(think string) (talk string) {
 	if think == "sb" {
 		talk = "你是个大帅比"
 	} else {
@@ -20,7 +20,7 @@ func (s *Student3) Speak(think string) (talk string) {
 
 func main() {
 	//var peo People
-	//var stu = Student3{}
+	//var stu *Student3
 	//peo = stu
 	var peo People = Student3{}
 

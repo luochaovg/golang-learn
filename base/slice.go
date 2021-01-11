@@ -94,7 +94,7 @@ func main() {
 	urls["google"] = "www.google.com"
 	urls["csdn"] = "www.csdn.net"
 
-	names := make([]string, len(urls)) // 注意此时切片已经有值了 []string{ "", "", ""}
+	names := make([]string, len(urls)) // TODO 注意此时切片已经有值了 []string{ "", "", ""}
 	//var names []string
 	for key, _ := range urls {
 		names = append(names, key) // append 会自动给切片执行初始化操作

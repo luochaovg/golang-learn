@@ -72,7 +72,7 @@ func main() {
 		close(result)
 	}()
 
-	// 输出结果
+	// 输出结果     //无限循环从通道中读取数据
 	for x := range result { // result 没有关闭会造成死锁
 		fmt.Println(x)
 	}

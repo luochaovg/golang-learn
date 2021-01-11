@@ -52,6 +52,8 @@ func readFromFileByBufio() {
 
 	defer fileObj.Close()
 
+	// TODO 因为 fileObj 实现了 Read()方法, 而io.Reader是一个接口， 接口只有一个Read()方法
+
 	reader := bufio.NewReader(fileObj)
 
 	for {

@@ -54,7 +54,9 @@ func main() {
 	fmt.Println(now)
 
 	// 明天的这个时间
-	time.Parse("2006-01-02 15:04:05", "2020-11-28 14:31:50")
+	timea, _ := time.Parse("20060102", "20201128")
+
+	fmt.Println("aaaaaa", timea.Format("2006-01-02"))
 
 	// 按照东八区格式解析时间
 	l, err := time.LoadLocation("Asia/Shanghai")
