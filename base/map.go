@@ -1,4 +1,4 @@
-package base
+package main
 
 import "fmt"
 
@@ -13,6 +13,7 @@ func main() {
 
 	m1["age"] = 49
 	m1["height"] = 173
+	m1["height2"] = 1733
 
 	fmt.Println(m1)
 	fmt.Println(m1["age"], m1["abc"]) // 49 0
