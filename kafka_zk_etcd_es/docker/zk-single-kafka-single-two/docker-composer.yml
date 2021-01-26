@@ -1,0 +1,25 @@
+version: '3.6'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181"
+    environment:
+      - TZ=Asia/Shanghai
+      - LANG=en_US.UTF-8
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
+  kafka:
+    build: ./kafka
+    ports:
+      - "9092:9092"
+    environment:
+      - TZ=Asia/Shanghai
+      - LANG=en_US.UTF-8
+      - KAFKA_ADVERTISED_HOST_NAME=127.0.0.1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    volumes:
+      - ./kafka/data:/kafka
+    depends_on:
+      - zookeeper
