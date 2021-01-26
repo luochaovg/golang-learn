@@ -3,6 +3,7 @@ module liwenzhou
 go 1.15
 
 require (
+	github.com/Shopify/sarama v1.27.2 // indirect
 	github.com/davyxu/golog v0.1.0
 	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/go-redis/redis/v8 v8.4.2
