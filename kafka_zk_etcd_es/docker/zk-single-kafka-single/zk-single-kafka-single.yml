@@ -5,18 +5,18 @@ services:
         ports:
             - '2181:2181'
         volumes:
-            - "zookeeper_data:/bitnami"
+            - ./zookeeper_data:/bitnami/zookeeper
         environment:
             - TZ=Asia/Shanghai
             - LANG=en_US.UTF-8
             - ALLOW_ANONYMOUS_LOGIN=yes
 
-    kafka1:
+    kafka:
         image: 'bitnami/kafka:latest'
         ports:
             - "9092:9092"
         volumes:
-          - "kafka_data:/bitnami"
+          - ./kafka_data:/bitnami/kafka
         environment:
             - TZ=Asia/Shanghai
             - LANG=en_US.UTF-8
@@ -24,23 +24,3 @@ services:
             - ALLOW_PLAINTEXT_LISTENER=yes
         depends_on:
             - zookeeper
-    etcd:
-        image: bitnami/etcd:latest
-        environment:
-            - TZ=Asia/Shanghai
-            - LANG=en_US.UTF-8
-            - ALLOW_NONE_AUTHENTICATION=yes
-            - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
-        volumes:
-            - "etcd_data:/bitnami"
-        ports:
-            - 2379:2379
-            - 2380:2380
-
-volumes:
-    etcd_data:
-        driver: local
-    kafka_data:
-        driver: local
-    zookeeper_data:
-        driver: local

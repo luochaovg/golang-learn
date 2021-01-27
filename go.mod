@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	github.com/Shopify/sarama v1.27.2
+	github.com/coreos/etcd v2.3.8+incompatible // indirect
 	github.com/davyxu/golog v0.1.0
 	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/go-redis/redis/v8 v8.4.2
@@ -13,5 +14,7 @@ require (
 	github.com/nsqio/go-nsq v1.0.8
 	github.com/nxadm/tail v1.4.4
 	github.com/pkg/profile v1.5.0
+	go.etcd.io/etcd v2.3.8+incompatible // indirect
+	google.golang.org/grpc v1.35.0 // indirect
 	gopkg.in/ini.v1 v1.62.0 // indirect
 )
