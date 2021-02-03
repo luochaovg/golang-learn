@@ -16,5 +16,5 @@ require (
 	github.com/pkg/profile v1.5.0
 	go.etcd.io/etcd v2.3.8+incompatible // indirect
 	google.golang.org/grpc v1.35.0 // indirect
-	gopkg.in/ini.v1 v1.62.0 // indirect
+	gopkg.in/ini.v1 v1.62.0
 )
