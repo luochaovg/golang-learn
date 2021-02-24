@@ -5,3 +5,6 @@
 - https://www.lixueduan.com/post/etcd/05-watch/
 
 ### etcdctl一些操作命令 ， 去了解！
+
+#### 分布式锁
+- https://zhuanlan.zhihu.com/p/42056183
