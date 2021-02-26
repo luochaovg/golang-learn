@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 //import "sort"
@@ -45,6 +46,10 @@ func SortArray(nums []int) []int {
 // https://leetcode-cn.com/problems/sort-list/
 // https://leetcode-cn.com/problems/sort-list/submissions/
 // https://leetcode-cn.com/problems/sort-list/solution/sort-list-gui-bing-pai-xu-lian-biao-by-jyd/
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
 func sortList(head *ListNode) *ListNode {
 	// 如果 head为空或者head就一位,直接返回
@@ -89,21 +94,120 @@ func merge(node1 *ListNode, node2 *ListNode) *ListNode {
 	return node.Next
 }
 
-// 反转链表
+// 反转链表 K 个一组翻转链表
 // https://leetcode-cn.com/problems/reverse-nodes-in-k-group/
 
 // 路径综合
 // https://leetcode-cn.com/problems/path-sum-ii/
 
-//206. 反转链表
+//206. 反转链表 递归
 //https://leetcode-cn.com/problems/reverse-linked-list/
+func reverseList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+
+	p := reverseList(head.Next)
+
+	head.Next.Next = head
+	head.Next = nil
+
+	return p
+}
+
+// 逐个将旧链表的节点插入到新链表
+func reverseList2(head *ListNode) *ListNode {
+	var newHead *ListNode
+
+	for head != nil {
+		tmp := head
+		head = head.Next
+
+		tmp.Next = newHead
+		newHead = tmp
+	}
+
+	return newHead
+}
 
 //15. 三数之和
 // https://leetcode-cn.com/problems/3sum/
+// https://leetcode-cn.com/problems/3sum/submissions/
+func threeSum(nums []int) [][]int {
+	// 排序，快排
+	sort.Ints(nums)
+	// 初始化数据
+	result := [][]int{}
+	len := len(nums)
+
+	//outer:
+	// left 表示第一个运算数索引
+	for left := 0; left < len-2; left++ {
+		//若最小值，比 0 大，则一定没有结果
+		if nums[left] > 0 {
+			break
+		}
+
+		// 不能出现重复数字，因此需要判断若值相同，不参与比较，比较哪些不相同的
+		if left > 0 && nums[left] == nums[left-1] {
+			continue
+		}
+		// i, j 表示第 2， 3 个运算数索引
+		// i 从 第一个运算数的下一个开始
+		// j 从最后一个元素开始
+		i, j := left+1, len-1
+		// 加上最大的两个数，还不能大于 0
+		if nums[left]+nums[j-1]+nums[j] < 0 {
+			continue
+		}
+		// 比较目标
+		target := 0 - nums[left]
+
+		// 迭代比较
+		for i < j {
+			sum := nums[i] + nums[j]
+			if sum == target {
+				// 找到一组
+				result = append(result, []int{nums[left], nums[i], nums[j]})
+				//break outer
+				// [-4, -1, -1, 0, 1, 2]
+				// 准备找下一组，重置索引
+				// 不能出现重复数字，因此需要判断若值相同，不参与比较，比较哪些不相同的
+				for i++; i < j && nums[i] == nums[i-1]; i++ {
+				}
+				for j--; i < j && nums[j] == nums[j+1]; j-- {
+				}
+			} else if sum < target {
+				// 小于，则将小的数增加，就是
+				i++
+			} else {
+				// 大于, 则将小的数减小
+				j--
+			}
+		}
+	}
+
+	return result
+
+}
 
 func main() {
-	nums := []int{2, 13, 42, 34, 56, 23, 67, 365, 87665, 54, 68, 3}
+	//nums := []int{2, 13, 42, 34, 56, 23, 67, 365, 87665, 54, 68, 3}
 
 	//sort.Ints(nums)
-	fmt.Println(SortArray(nums))
+	//fmt.Println(SortArray(nums))
+
+	l1 := &ListNode{
+		Val: 2,
+		Next: &ListNode{
+			Val: 4,
+			Next: &ListNode{
+				Val:  3,
+				Next: nil,
+			},
+		},
+	}
+	rl1 := reverseList2(l1)
+	fmt.Printf("%#v , %#v", l1, rl1)
+
 }
