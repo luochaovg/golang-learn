@@ -1,13 +1,13 @@
-package base
+package main
 
 import "fmt"
 
 func main() {
 
-	a := 7
-	a++
-
-	fmt.Println(a)
+	//a := 7
+	//a++
+	//
+	//fmt.Println(a)
 
 	// & 按位与
 	// 5 二进制 101
@@ -16,4 +16,10 @@ func main() {
 	fmt.Println(5 | 3)
 	fmt.Println(5 << 1) // 1010  = 2*2^3 + 2*2^1
 	fmt.Println(5 >> 1) // 10 = 2
+
+	var a uint = 1
+	var b uint = 2
+
+	c := a - b
+	fmt.Println(c)
 }

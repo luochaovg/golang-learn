@@ -9,8 +9,7 @@
 > 比如说事务，对于3年以下的应试者，要知道什么是事务，事务有哪些特性；
 >对于3到5年的应试者，要知道如何使用事务，知道事务隔离级别对系统设计的影响范围，知道事务传播机制在代码结构上的影响范围；
 >对于5到8年的应试者，要知道数据库的锁机制，知道事务隔离级别在不同数据库中的设计原理，知道事务导致的死锁原理及应对方案
-- [参考]（https://www.toutiao.com/i6930164998287589896/?tt_from=weixin&utm_campaign=client_share&wxshare_count=1&timestamp=1614831082&app=news_article&utm_source=weixin&utm_medium=toutiao_android&use_new_style=1&req_id=202103041211220101511921465B00A51E&group_id=6930164998287589896）
-- [参考]（https://www.toutiao.com/i6930164998287589896/?tt_from=weixin&utm_campaign=client_share&wxshare_count=1&timestamp=1614831082&app=news_article&utm_source=weixin&utm_medium=toutiao_android&use_new_style=1&req_id=202103041211220101511921465B00A51E&group_id=6930164998287589896）
+- [参考]（https://www.toutiao.com/i6930164998287589896）
 ```text
 所谓死锁<DeadLock>：是指两个或两个以上的进程在执行过程中,因争夺资源而造成的一种互相等待的现象,若无外力作用，它们都将无法推进下去.
 此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程。

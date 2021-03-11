@@ -31,6 +31,8 @@
 - 7.消费者组消费数据的原理
     ![Image text](./pic/WX20210125-160134@2x.png)
 
+- 8.日志收集系统架构图
+    ![Image text](./pic/1611543041483.jpg)
 #### docker-composer
 - https://github.com/simplesteph/kafka-stack-docker-compose
 
