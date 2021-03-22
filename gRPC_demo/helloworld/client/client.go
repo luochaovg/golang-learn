@@ -18,7 +18,7 @@ func main() {
 
 	c := pb.NewGreeterClient(conn)
 	// 调用服务端的SayHello
-	r, err := c.SayHello(context.Background(), &pb.HelloRequest{Name: "q1mi"})
+	r, err := c.SayHello(context.Background(), &pb.HelloRequest{Name: "luochao"})
 	if err != nil {
 		fmt.Printf("could not greet: %v", err)
 	}

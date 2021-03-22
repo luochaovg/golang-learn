@@ -13,7 +13,7 @@ def run():
     # 并且应该在with语句不符合代码需求的情况下使用。
     with grpc.insecure_channel('localhost:8972') as channel:
         stub = helloworld_pb2_grpc.GreeterStub(channel)
-        response = stub.SayHello(helloworld_pb2.HelloRequest(name='q1mi'))
+        response = stub.SayHello(helloworld_pb2.HelloRequest(name='xieoaxue'))
     print("Greeter client received: {}!".format(response.message))
 
 
