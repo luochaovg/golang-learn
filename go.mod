@@ -14,6 +14,7 @@ require (
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/nsqio/go-nsq v1.0.8
 	github.com/nxadm/tail v1.4.4
+	github.com/olivere/elastic/v7 v7.0.23
 	github.com/pkg/profile v1.5.0
 	go.etcd.io/etcd v2.3.8+incompatible // indirect
 	google.golang.org/genproto v0.0.0-20210317182105-75c7a8546eb9 // indirect

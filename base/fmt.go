@@ -1,4 +1,4 @@
-package base
+package main
 
 import (
 	"fmt"
@@ -26,6 +26,9 @@ func main() {
 	//	age   int
 	//	class string
 	//)
+	iccid := "12345678"
+	a := iccid[len(iccid)-6:]
+	fmt.Println(a)
 
 	name := "luochao"
 	t := 'l'
