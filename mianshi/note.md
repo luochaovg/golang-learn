@@ -7,6 +7,10 @@
 #### 面试题汇总
 - https://www.jianshu.com/p/6445bac61442
 
+#### LeetCode算法 
+- [JAVA](https://github.com/zhangtiansimple/Leetcode)
+- [GO1](https://github.com/liweiwei1419/LeetCode-Solutions-in-Good-Style)
+- [GO2](https://github.com/wufenggirl/LeetCode-in-Golang)
 
 #### 简历上写自己优势的点
 
