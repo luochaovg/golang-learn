@@ -106,7 +106,7 @@ func main() {
 	t.Right.Left.Right = NewBinaryTree("I")
 
 	fmt.Println(t.PreOrderNoRecursion())
-	fmt.Println(t.InOrderNoRecursion())
-	fmt.Println(t.PostOrderNoRecursion())
+	//fmt.Println(t.InOrderNoRecursion())
+	//fmt.Println(t.PostOrderNoRecursion())
 
 }
