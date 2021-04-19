@@ -7,9 +7,6 @@ import (
 
 //import "sort"
 
-// 经典排序算法总结与Go实现
-// https://www.jianshu.com/p/06b6424042d5
-
 // lfu 算法
 // https://leetcode-cn.com/problems/lfu-cache/
 
@@ -115,7 +112,7 @@ func reverseList(head *ListNode) *ListNode {
 	return p
 }
 
-// 逐个将旧链表的节点插入到新链表
+// 逐个将旧链表的节点插入到新链表 迭代
 func reverseList2(head *ListNode) *ListNode {
 	var newHead *ListNode
 
