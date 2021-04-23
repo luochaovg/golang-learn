@@ -6,6 +6,10 @@
 
 ##### AMQP,流程图
 - ![](./pic/mq02.png)
+- ![](./pic/mq03.png)
+```text
+虚拟主机(当成mysql库)
+```
 
 ##### 简单操作安装
 - $rabbitmqctl help
