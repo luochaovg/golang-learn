@@ -133,11 +133,16 @@ https://zhuanlan.zhihu.com/p/48412781
 单列/工厂
 ```
 
-- Swoole的理解和应用
-[参考](https://blog.csdn.net/qq_35619227/article/details/106585596)
-[参考](http://wangzhenkai.com/article/16)
+##### Swoole的理解和应用
+- [参考](https://blog.csdn.net/qq_35619227/article/details/106585596)
+- [参考](http://wangzhenkai.com/article/16)
+- [进程模型1](https://wiki.swoole.com/#/server/init?id=%e8%bf%9b%e7%a8%8b%e7%ba%bf%e7%a8%8b%e7%bb%93%e6%9e%84%e5%9b%be)
+- [进程模型2](https://blog.csdn.net/weixin_40022980/article/details/82705109)
 ```text
-swoole是完全的长驻内存的，长驻内存一个最大的好处就是可以性能加速。在fpm模式下，我们处理一个请求，通常会有一些空消耗,比如框架共用文件加载，配置文件加载，那么在swoole中，可以在onworkerstart的时候提前一次性把一些必要的文件和配置加载好，不必每次receive重复加载一遍，这样能提升不小的性能。
+swoole是完全的长驻内存的，长驻内存一个最大的好处就是可以性能加速。
+在fpm模式下，我们处理一个请求，通常会有一些空消耗,比如框架共用文件加载，配置文件加载，
+那么在swoole中，可以在on workerstart的时候提前一次性把一些必要的文件和配置加载好，
+不必每次receive重复加载一遍，这样能提升不小的性能。
 ```
 - 如果自己写过框架，有什么心得体会
 
