@@ -1,12 +1,13 @@
 #### kafaka
 - 1.kafka 集群的架构
     ![Image text](./pic/WX20210125-161421@2x.png)
-    -  1.broker
-    -  2.topic
+    -  1.broker （相当于服务器）
+    -  2.topic  （主题）
     -  3.partition:分区，把同一个topic分成多个分区，提高负载
         -  3.1.leader:分区的主节点
-        -  3.2.follower:分区的从节点
-    - 4.Consumer Group 
+        -  3.2.follower:分区的从节点（leader 副本）
+    -  4.Consumer Group （消费组）
+        - 某一个topic下分区数据，只能被消费者组里面的一个消费者消费
     
 - 2.生产者往kafka发送数据的流程（六步）
     ![Image text](./pic/1611544184721.jpg)
@@ -33,6 +34,8 @@
 
 - 8.日志收集系统架构图
     ![Image text](./pic/1611543041483.jpg)
+    
+- 9.offset 在0.9版本之前存在zk, 0.9版本之后存在kafka本地，存在磁盘
 #### docker-composer
 - https://github.com/simplesteph/kafka-stack-docker-compose
 
