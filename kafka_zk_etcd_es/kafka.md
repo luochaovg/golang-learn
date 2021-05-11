@@ -96,7 +96,7 @@ round-robin循环，按组来划分的 / range(默认)，按主题来划分的
 
 #### offset 的维护
 ```text
-ZK 保存offset : 消费者组(group)， 主题(group)， 分区（partition） 三者来确定offset
+ZK 保存offset : 消费者组(group)， 主题(topic)， 分区（partition） 三者来确定offset
 
 Kafka 0.9 版本之前， consumer 默认将 offset 保存在 Zookeeper 中，
 从 0.9 版本开始，consumer 默认将 offset 保存在 Kafka 一个内置的 topic 中，
@@ -142,7 +142,16 @@ Transaction Coordinator 交互获得 Transaction ID 对应的任务状态。 Tra
 
 ```
 #### Kafka API
+![Image text](./pic/19.png)
 ```text
+Kafka 的 Producer 发送消息采用的是异步发送的方式
+
+涉及到了两个线程——main 线程和 Sender 线程 ，以及一个线程共享变量——RecordAccumulator
+main 线程将消息发送给 RecordAccumulator， Sender 线程不断从 RecordAccumulator 中拉取消息发送到 Kafka broker。
+
+相关参数：
+batch.size： 只有数据积累到 batch.size 之后， sender 才会发送数据。
+linger.ms： 如果数据迟迟未达到 batch.size， sender 等待 linger.time 之后就会发送数据。
 
 ```
 
