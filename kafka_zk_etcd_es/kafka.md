@@ -1,5 +1,7 @@
 > Kafka 
 - 官网： http://kafka.apachecn.org/
+- 视频地址： https://www.bilibili.com/video/BV1a4411B7V9?from=search&seid=5013796797653472442
+- 线上资料： https://my.oschina.net/jallenkwong/blog/4449224
 
 #### kafaka
 - 1.kafka 集群的架构
@@ -31,6 +33,9 @@ ISR 概念
 Leader 维护了一个动态的 in-sync replica set (ISR)，意为和 leader 保持同步的 follower 集合。
 当 ISR 中的 follower 完成数据的同步之后，就会给 leader 发送 ack。如果 follower长时间未向leader同步数据，
 则该follower将被踢出ISR，该时间阈值由replica.lag.time.max.ms参数设定。 Leader 发生故障之后，就会从 ISR 中选举新的 leader。
+
+ISR副本同步队列？
+
 
 all全部优化 , ISR: 同步副本
 
@@ -92,6 +97,8 @@ pull / push
 Kafka 有两种分配策略：
 round-robin循环，按组来划分的 / range(默认)，按主题来划分的
 当消费组中消费数量变化，会重新触发分区分配策略
+
+
 ```
 
 #### offset 的维护
@@ -154,8 +161,41 @@ batch.size： 只有数据积累到 batch.size 之后， sender 才会发送数�
 linger.ms： 如果数据迟迟未达到 batch.size， sender 等待 linger.time 之后就会发送数据。
 
 ```
+#### kafka 面试题
+- https://blog.csdn.net/C_Xiang_Falcon/article/details/100917145
+```text
+1，“消费组中的消费者个数如果超过 topic 的分区，那么就会有消费者消费不到数据”这句 话是否正确？ 正确。
+2， 消费者提交消费位移时提交的是当前消费到的最新消息的 offset 还是 offset+1？  offset+1
 
+Kafka 日志保存时间？
+Kafka 的硬盘大小？
+Kafka 监控？
+Kafka 分区数？
+副本树设定？
+多少个Topic ?
+Kafka 丢不丢数据？
+kafka 的isr 副本同步队列？
+kafka 分区分配策略？
 
+kafka 中数据计算？
+每天数据总量100g, 每天一亿条日志 10000w / 24/ 60 / 60 = 1150/s
+低谷： 1150 * 0.2 = 400
+高峰： 1150 * (2 - 20) = 2300 - 23000 / s
+每条日志大小 ： 0.5 - 2 k 
+每秒数据量： 2.3 - 20 MB
+
+kafka挂掉？
+flume 记录
+日志有记录
+短期没事
+
+kafka 消费数据积压，kafka消费能力不足怎么处理？
+1）如果是 Kafka 消费能力不足，则可以考虑增加 Topic 的分区数，并且同时提升消费
+组的消费者数量，消费者数=分区数。（两者缺一不可）
+2）如果是下游的数据处理不及时：提高每批次拉取的数量。批次拉取数据过少（拉取
+数据/处理时间<生产速度），使处理的数据小于生产的数据，也会造成数据积压
+max.poll.records  调大
+```
 #### docker-composer
 - https://github.com/simplesteph/kafka-stack-docker-compose
 
