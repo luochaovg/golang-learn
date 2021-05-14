@@ -1,5 +1,6 @@
 > RabbitMQ 专题
 - https://www.bilibili.com/video/BV1dE411K7MG?from=search&seid=16139445668608499013
+- [面试专题](https://daimajiaoliu.com/daima/4ed1488c1100414)
 
 #### 引言
 - ![特点](./pic/mq01.png)
