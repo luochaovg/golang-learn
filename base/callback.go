@@ -64,6 +64,12 @@ func calc(base int) (func(int) int, func(int) int) {
 	return add, sum
 }
 
+func div(a int) func(int) int {
+	return func(i int) int {
+		return a * i
+	}
+}
+
 func main() {
 
 	//f1 := func() {

@@ -29,6 +29,19 @@ const (
 )
 
 func main() {
+
+	ordeId := "10323232323232"
+	content := ordeId[0:2]
+	fmt.Println(content)
+	fmt.Printf("%T", content)
+
+	var amount int64 = 18737893424
+
+	amount2 := float64(amount) / 100
+
+	amount3 := fmt.Sprintf("%.2f", amount2)
+	fmt.Println(amount2, amount3)
+	return
 	wift = "xiaoxue"
 
 	fmt.Print(wift)

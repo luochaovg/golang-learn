@@ -10,6 +10,8 @@ func demoSl(s []int) {
 
 // 复习： https://www.jianshu.com/p/ae8a413fc33f
 func main() {
+	demoS2()
+	return
 	s1 := []int{1, 2, 3, 4}
 	fmt.Printf("s1:%#v", s1)
 	demoSl(s1)
@@ -21,4 +23,13 @@ func main() {
 	//创建切片(slice[start:end])时, start 和 end 指定的区间不能超过 cap(slice) 范围
 	//slice[8] 会 panic, 而 slice[:8] 正常返回.
 
+}
+
+func demoS2() {
+	str1 := []string{"a", "b", "c"}
+	str2 := str1[1:]                   // bc
+	str2[1] = "new"                    // str2 = bnew
+	fmt.Println(str1)                  //  str1 = abnew
+	str2 = append(str2, "z", "x", "y") // str2 = bcnewzxy
+	fmt.Println(str1)                  // str1 = abnew
 }
