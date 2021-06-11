@@ -10,8 +10,8 @@ func time01() {
 	fmt.Println(now.Year(), now.Day())
 	fmt.Println(now.Unix())
 	fmt.Println(now.UnixNano())
-	//fmt.Printf("%#v", now)
-	//fmt.Printf("%v", now)
+	fmt.Printf("%#v", now)
+	fmt.Printf("%v", now)
 
 	//ret := time.Unix(1606457598, 0)
 	//fmt.Println(ret.Year())
@@ -49,7 +49,23 @@ func time01() {
 }
 
 func main() {
-	now := time.Now() // 本地时间
+	format := "2006-01-02 15:04:05"
+	now := time.Now()
+	//now, _ := time.Parse(format, time.Now().Format(format))
+	a, _ := time.Parse(format, "2029-03-10 11:00:00")
+
+	if now.After(a) {
+		fmt.Println(1)
+	} else {
+		fmt.Println(0)
+	}
+	return
+
+	parse, _ := time.Parse("20060102150405", "20141030133525")
+	t3 := parse.Format("2006-01-02 15:04:05")
+	fmt.Println(t3)
+
+	now = time.Now() // 本地时间
 	fmt.Println(222222)
 	fmt.Println(now)
 

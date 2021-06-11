@@ -17,6 +17,11 @@ func main() {
 	m1["age"] = 49
 	m1["height"] = 173
 	m1["height2"] = 1733
+	fmt.Printf("m1:%#v \n", m1)
+	resetmap(m1)
+	fmt.Printf("m1:%#v \n", m1)
+
+	return
 
 	fmt.Println(m1)
 	fmt.Println(m1["age"], m1["abc"]) // 49 0
@@ -55,6 +60,10 @@ func main() {
 
 	fmt.Println(m2)
 
+}
+
+func resetmap(m map[string]int) {
+	m["age"] = 50344
 }
 
 type People2 struct {
