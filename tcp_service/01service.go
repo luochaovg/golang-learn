@@ -11,7 +11,7 @@ import (
 // TCP server端
 
 // 处理函数
-func process(conn net.Conn) {
+func Process(conn net.Conn) {
 	defer conn.Close() // 关闭连接
 	for {
 		reader := bufio.NewReader(conn)
@@ -59,7 +59,7 @@ func main() {
 			continue
 		}
 		// 3.启动一个goroutine处理连接
-		go process(conn)
+		go Process(conn)
 	}
 
 }

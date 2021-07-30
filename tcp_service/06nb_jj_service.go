@@ -8,7 +8,7 @@ import (
 	"net"
 )
 
-func process(conn net.Conn) {
+func Process(conn net.Conn) {
 	defer conn.Close()
 	reader := bufio.NewReader(conn)
 	for {
@@ -21,6 +21,9 @@ func process(conn net.Conn) {
 			return
 		}
 		fmt.Println("收到client发来的数据：", msg)
+
+		bytes, _ := proto.Encode(msg)
+		conn.Write(bytes) // 发送数据
 	}
 }
 
@@ -31,13 +34,15 @@ func main() {
 		fmt.Println("listen failed, err:", err)
 		return
 	}
+
 	defer listen.Close()
 	for {
 		conn, err := listen.Accept()
+
 		if err != nil {
 			fmt.Println("accept failed, err:", err)
 			continue
 		}
-		go process(conn)
+		go Process(conn)
 	}
 }
