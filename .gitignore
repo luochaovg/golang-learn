@@ -3,3 +3,4 @@ kafka_zk_etcd_es/docker/zk-single-kafka-multiple/zk-single-kafka-multiple/*
 kafka_zk_etcd_es/docker/zk-single-kafka-multiple/zk-single-kafka-multiple/*
 kafka_zk_etcd_es/docker/zk-single-kafka-single-two/kafka/*
 es_demo/docker-es-kibana/elasticsearch/data/*
+traefik/log/*

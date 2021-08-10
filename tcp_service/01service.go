@@ -13,6 +13,7 @@ import (
 // 处理函数
 func Process(conn net.Conn) {
 	defer conn.Close() // 关闭连接
+
 	for {
 		reader := bufio.NewReader(conn)
 		var buf [128]byte
@@ -54,6 +55,10 @@ func main() {
 	for {
 		// 2.建立连接
 		conn, err := listen.Accept()
+
+		fmt.Printf("connect addr  string is %s \n", conn.RemoteAddr().String())
+		fmt.Printf("connect addr newtork is %s \n", conn.RemoteAddr().Network())
+
 		if err != nil {
 			fmt.Println("accept failed, err:", err)
 			continue
