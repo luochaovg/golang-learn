@@ -1,1 +1,2 @@
 配置来源： https://hexo.aufomm.com/traefik/
+自签证书： https://tools.aufomm.com/dist/genCSR.php
