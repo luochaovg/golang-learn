@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+// 参考连接： https://www.liwenzhou.com/posts/Go/json_tricks_in_go/
+
 // 1, 序列化： 把Go语言中的结构体变量 --> json 格式的字符串
 // 2, 反序列化： json 格式的字符串 --> Go语言中能够识别的结构体变量
 
