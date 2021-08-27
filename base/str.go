@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+const cl = 100
+
+var bl = 200
+
 type People struct {
 	Name string
 }
@@ -11,6 +15,7 @@ type People struct {
 func (p *People) String() string {
 	return fmt.Sprintf("print: %v", p)
 }
+
 func main() {
 	temp := "http://"
 	fmt.Println([]byte(temp))
