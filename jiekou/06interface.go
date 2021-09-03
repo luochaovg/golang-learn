@@ -7,7 +7,7 @@ import "fmt"
 // 所有的类型都实现了空接口， 也就是任意类型的变量都能保存到空接口中
 
 // interface 是关键字
-// interface{] 空接口类型
+// interface{} 空接口类型
 
 // 空接口作为函数的参数
 func show(a interface{}) {
