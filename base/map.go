@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	deomo()
+	//deomo()
 	var m1 map[string]int
 
 	fmt.Println(m1 == nil) // 还没有初始化（没有内存中开辟空间  ）
@@ -20,6 +20,11 @@ func main() {
 	fmt.Printf("m1:%#v \n", m1)
 	resetmap(m1)
 	fmt.Printf("m1:%#v \n", m1)
+
+	m3 := map[string]int{
+		"age": 34,
+	}
+	fmt.Println("m3 is ", m3)
 
 	return
 

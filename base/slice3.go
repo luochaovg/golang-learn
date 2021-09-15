@@ -4,6 +4,7 @@ import "fmt"
 
 // https://mp.weixin.qq.com/s/kEQI74ge6VhvNEr1d3JW-Q
 // 内存操作 https://www.flysnow.org/2017/07/06/go-in-action-unsafe-pointer.html
+// go1.17 切片新特性 https://mp.weixin.qq.com/s?__biz=MzAxNzY0NDE3NA==&mid=2247487431&idx=1&sn=1a75473e37a03d302b3183c0646b35a4&scene=21#wechat_redirect
 func main() {
 	//strSlice := []string
 	strSlice := make([]string, 5, 5)
