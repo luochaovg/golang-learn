@@ -1,0 +1,8 @@
+ > MySQL实战34讲
+ ### 课程链接
+ - https://e.naixuejiaoyu.com/detail/p_61726279e4b039fe30f05d84/6?fromH5=true
+  
+ ### 课件地址 
+ - https://h5.tanma.tech/#/file?hjType=1&corp_id=ww81977112b716d7c8&sales_id=439513751017792&snapshot_id=956d27b0001e11ec983400163e342bad&content_id=956d27b0001e11ec983400163e342bad&content_title=%E6%9E%B6%E6%9E%84%E5%B8%88%E7%BA%A7MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E6%88%98%EF%BC%88%E4%B8%8A%EF%BC%89.pdf&content_type=7&source_type=1&source=439513751017792&source_title=&connectFlag=1&showType=1,2,3,4&trace_id=3eee3843-5c17-46a1-b61b-792f25817589&trace_deep=0
+ - https://h5.tanma.tech/#/file?hjType=1&corp_id=ww81977112b716d7c8&sales_id=439513751017792&snapshot_id=9a1245c1001e11ec983400163e342bad&content_id=9a1245c1001e11ec983400163e342bad&content_title=%E6%9E%B6%E6%9E%84%E5%B8%88%E7%BA%A7MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E6%88%98%EF%BC%88%E4%B8%AD%EF%BC%89.pdf&content_type=7&source_type=1&source=439513751017792&source_title=&connectFlag=1&showType=1,2,3,4&trace_id=88894145-bee6-4548-8707-7cf07ff31c47&trace_deep=0
+ - https://h5.tanma.tech/#/file?hjType=1&corp_id=ww81977112b716d7c8&sales_id=439513751017792&snapshot_id=9f15140b001e11ec8b8b00163e3442f2&content_id=9f15140b001e11ec8b8b00163e3442f2&content_title=%E6%9E%B6%E6%9E%84%E5%B8%88%E7%BA%A7MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E6%88%98%EF%BC%88%E4%B8%8B%EF%BC%89.pdf&content_type=7&source_type=1&source=439513751017792&source_title=&connectFlag=1&showType=1,2,3,4&trace_id=f9e67256-6a2f-4a23-b610-c4d34bbc84fc&trace_deep=0
