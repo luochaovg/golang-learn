@@ -315,6 +315,7 @@ B+树是应文件系统所需而产生的一种B树的变形树（文件的目�
 ```text
 负载
 Redis集群，主从同步、读写分离，事务 + 异步处理
+Redis 集群 ： https://www.cnblogs.com/yufeng218/p/13688582.html
 ```
 - 支付
 ```text
