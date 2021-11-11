@@ -80,3 +80,6 @@ slave 节点 就是master节点的一个备份， 不能进行故障转移
 master宕机自动切换到slave节点
 ```
 镜像集群架构图![图14](./pic/m14.png)
+
+- 死信队列[1](https://www.jianshu.com/p/b5678e681473)
+- 死信队列[2](https://www.cnblogs.com/mfrank/p/11184929.html)
