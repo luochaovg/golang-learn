@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 使用值接收者和指针接收者的区别？
 // 使用值接收者实现接口，结构体类型和结构体指针类型的变量都能存
@@ -20,6 +22,11 @@ type cat struct {
 	feet int
 }
 
+type dog struct {
+	name string
+	feet int
+}
+
 // 使用值接收者实现了接口的所有方法
 //func (c cat) move() {
 //	fmt.Println("走猫步")
@@ -28,6 +35,14 @@ type cat struct {
 //func (c cat) eat(food string) {
 //	fmt.Printf("猫吃%s ... \n", food)
 //}
+
+func (d dog) move() {
+
+}
+
+func (d dog) eat(foot string) {
+	fmt.Printf("dog name %s eat %s \n", d.name, foot)
+}
 
 // 使用指针接收者实现了接口的所有方法
 func (c *cat) move() {
@@ -59,5 +74,12 @@ func main() {
 	fmt.Printf("%T %p\n", a1, a1)
 
 	//fmt.Println(a1)
+
+	var d1 dog = dog{name: "xx", feet: 4}
+	d1.eat("gutou")
+
+	var a2 animal
+	a2 = d1
+	fmt.Printf("%T %p %#v \n", a2, a2, a2)
 
 }

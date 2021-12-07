@@ -35,5 +35,6 @@ func (c *cat) eat(food string) {
 }
 
 func main() {
-
+	var x uint8 = 0 - 1
+	fmt.Println(x)
 }
