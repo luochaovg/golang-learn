@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	github.com/Shopify/sarama v1.27.2
+	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1386 // indirect
 	github.com/davyxu/golog v0.1.0
 	github.com/go-ping/ping v0.0.0-20210911151512-381826476871
 	github.com/go-redis/redis v6.15.9+incompatible
@@ -14,6 +15,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.3.0 // indirect
 	github.com/hpcloud/tail v1.0.0
 	github.com/jmoiron/sqlx v1.2.0
+	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/nsqio/go-nsq v1.0.8
 	github.com/nxadm/tail v1.4.4
 	github.com/olivere/elastic/v7 v7.0.23
@@ -23,6 +25,6 @@ require (
 	golang.org/x/sys v0.0.0-20210927094055-39ccf1dd6fa6 // indirect
 	google.golang.org/genproto v0.0.0-20210317182105-75c7a8546eb9 // indirect
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.1.0 // indirect
-	gopkg.in/ini.v1 v1.62.0
+	gopkg.in/ini.v1 v1.66.2
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
