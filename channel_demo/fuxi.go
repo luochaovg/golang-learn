@@ -68,5 +68,4 @@ func main() {
 		fmt.Println(n, ok)
 		time.Sleep(time.Second)
 	}
-
 }
