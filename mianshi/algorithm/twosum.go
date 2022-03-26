@@ -48,11 +48,58 @@ func toSum2(nums []int, target int) []int {
 	return nil
 }
 func main() {
-	nums := []int{12, 34, 65, 2, 7, 11, 15}
+
+	defer func() { println("A") }()
+	defer func() { panic("panic") }()
+	defer func() { println("B") }()
+	defer func() { println("C") }()
+
+	nums := []int{12, 34, 65, 2, 11, 7, 15}
 	target := 9
 
 	//ret, _ := twoSum(nums, target)
-	ret := toSum2(nums, target)
+	//ret := toSum2(nums, target)
+	//
+	//ret := toSum3(nums, target)
+	ret := toSum4(nums, target)
 
 	fmt.Println(ret)
+}
+
+// 双重循环
+func toSum3(nums []int, targe int) (rst []int) {
+	if len(nums) <= 1 {
+		return rst
+	}
+
+	for k1, v1 := range nums {
+		for k2, v2 := range nums {
+			if k1 == k2 {
+				break
+			}
+
+			if v1+v2 == targe {
+				rst = append(rst, k1, k2)
+				return
+			}
+
+		}
+	}
+
+	return
+}
+
+// 一次循环
+func toSum4(nums []int, targe int) (rst []int) {
+	hashMap := make(map[int]int, len(nums))
+
+	for index, num := range nums {
+		if value, ok := hashMap[num]; ok {
+			rst = append(rst, index, value)
+		}
+
+		hashMap[targe-num] = index
+	}
+
+	return
 }
