@@ -64,26 +64,49 @@ func main() {
 	//	fmt.Println(0)
 	//}
 
-	st := "2021-12-31"
-	et := "2021-12-31"
+	//st := "2021-12-31"
+	//et := "2021-12-31"
 
-	dst, det, err := CalcLinkTime(st, et, "daily")
-	fmt.Println(dst, det, err)
+	t := time.Now()
+	fmt.Println(int(t.Weekday()))
 
-	theTimeEnd, err := time.Parse("2006-01-02", det)
 
-	fmt.Println(theTimeEnd.Format("20060102"), err)
+	now := time.Now()
 
-	b, _ := getDivider(st, et, "daily", "avg") // 多少个时间天
-	fmt.Println("B", b)
+	year, month, _ := now.Date()
 
-	rangtime := Get_Time(st, et)
-	fmt.Println("CC", rangtime)
+	endOfLastMonth := time.Date(year, month, 0, 0, 0, 0, 0, now.Location())
+	fmt.Printf("End of the last month: %s\n", endOfLastMonth)
+	firstDayOfThisMonth := time.Date(year, month, 1, 0, 0, 0, 0, now.Location())
+	fmt.Printf("The fist day of the actual month: %s\n", firstDayOfThisMonth)
+	endOfThisMonth := time.Date(year, month+1, 0, 0, 0, 0, 0, now.Location())
+	fmt.Printf("The end of this month: %s\n", endOfThisMonth)
 
-	rst := addSliceByIndex([]string{"20211130", "20211210"}, []string{"202112011"}, 2)
 
-	fmt.Println(rst)
-	return
+
+	st := "2022-03-06"
+	et := "2022-04-02"
+	//
+	//st := "2021-10-01"
+	//et := "2022-03-31"
+
+	dst, det,  a , b , err := CalcLinkTimeSE(st, et, "weekly")
+	fmt.Println(dst, det, err, a, b )
+
+	//theTimeEnd, err := time.Parse("2006-01-02", det)
+	//
+	//fmt.Println(theTimeEnd.Format("20060102"), err)
+	//
+	//b, _ := getDivider(st, et, "daily", "avg") // 多少个时间天
+	//fmt.Println("B", b)
+	//
+	//rangtime := Get_Time(st, et)
+	//fmt.Println("CC", rangtime)
+	//
+	//rst := addSliceByIndex([]string{"20211130", "20211210"}, []string{"202112011"}, 2)
+	//
+	//fmt.Println(rst)
+	//return
 
 	//parse, _ := time.Parse("20060102150405", "20141030133525")
 	//t3 := parse.Format("2006-01-02 15:04:05")
