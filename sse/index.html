@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE Demo</title>
+</head>
+<body>
+<h1>Server-Sent Events</h1>
+<ul id="events"></ul>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const eventsList = document.getElementById('events');
+        let eventSource;
+        let lastHeartbeat = new Date();
+        let heartbeatCheckInterval;
+
+        function connect() {
+            if (eventSource) {
+                eventSource.close();
+            }
+
+            eventSource = new EventSource('http://localhost:8001/api/v2/monitor/screen/events');
+
+            eventSource.onmessage = function(event) {
+                const newEvent = document.createElement('li');
+                newEvent.textContent = event.data;
+                eventsList.appendChild(newEvent);
+            };
+
+            eventSource.addEventListener('heartbeat', function(event) {
+                console.log("Received heartbeat:", event.data);
+                lastHeartbeat = new Date();
+            });
+
+            eventSource.onerror = function(event) {
+                console.error("EventSource failed:", event);
+                eventSource.close();
+                setTimeout(connect, 3000); // 尝试每3秒重新连接一次
+            };
+
+            // Periodically check if the connection is still alive
+            if (heartbeatCheckInterval) {
+                clearInterval(heartbeatCheckInterval);
+            }
+
+            heartbeatCheckInterval = setInterval(() => {
+                const now = new Date();
+                if (now - lastHeartbeat > 60000) { // 60 seconds without heartbeat
+                    console.error("No heartbeat received in the last 60 seconds, reconnecting...");
+                    eventSource.close();
+                    clearInterval(heartbeatCheckInterval);
+                    setTimeout(connect, 3000); // Retry connection every 3 seconds
+                }
+            }, 10000); // Check every 10 seconds
+        }
+
+        connect();
+    });
+</script>
+</body>
+</html>
